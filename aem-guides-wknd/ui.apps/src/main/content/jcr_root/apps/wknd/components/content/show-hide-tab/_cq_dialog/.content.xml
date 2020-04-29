@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="List"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[test-tab]">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                granite:class="testTabs"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <listSettings
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="List Settings"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <cta
+                                                granite:class="showHideCTA"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                name="./cta"
+                                                text="CTA"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <listFrom
+                                                granite:class="showHideTabSelector"
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldLabel="Build List Using"
+                                                name="./listFrom">
+                                                <items jcr:primaryType="nt:unstructured">
+                                                    <select
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="Select"
+                                                        value="select"/>
+                                                    <children
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="tab1"
+                                                        value="tab1"/>
+                                                    <static
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="tab2"
+                                                        value="tab2"/>
+                                                </items>
+                                            </listFrom>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </listSettings>
+                    <tab1
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab1"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <linkItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.linkItems ? cqDesign.linkItems : false}"
+                                                fieldDescription="Link items to the corresponding page"
+                                                name="./linkItems"
+                                                text="Link items"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <showDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.showDescription ? cqDesign.showDescription : false}"
+                                                fieldDescription="Show descriptions of the link item"
+                                                name="./showDescription"
+                                                text="Show description"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <showModificationDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.showModificationDate ? cqDesign.showModificationDate : false}"
+                                                fieldDescription="Show modification date of the link item"
+                                                name="./showModificationDate"
+                                                text="Show date"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab1>
+                    <tab2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab2"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <linkItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.linkItems ? cqDesign.linkItems : false}"
+                                                fieldDescription="Link items to the corresponding page"
+                                                name="./linkItems"
+                                                text="Link items"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <showDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.showDescription ? cqDesign.showDescription : false}"
+                                                fieldDescription="Show descriptions of the link item"
+                                                name="./showDescription"
+                                                text="Show description"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <showModificationDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.showModificationDate ? cqDesign.showModificationDate : false}"
+                                                fieldDescription="Show modification date of the link item"
+                                                name="./showModificationDate"
+                                                text="Show date"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab2>
+                    <tab3
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Tab3"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <linkItems
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.linkItems ? cqDesign.linkItems : false}"
+                                                fieldDescription="Link items to the corresponding page"
+                                                name="./linkItems"
+                                                text="Link items"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <showDescription
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.showDescription ? cqDesign.showDescription : false}"
+                                                fieldDescription="Show descriptions of the link item"
+                                                name="./showDescription"
+                                                text="Show description"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                            <showModificationDate
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                checked="${not empty cqDesign.showModificationDate ? cqDesign.showModificationDate : false}"
+                                                fieldDescription="Show modification date of the link item"
+                                                name="./showModificationDate"
+                                                text="Show date"
+                                                uncheckedValue="false"
+                                                value="true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </tab3>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
